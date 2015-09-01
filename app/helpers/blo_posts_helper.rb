@@ -1,0 +1,2 @@
+module BloPostsHelper
+end
