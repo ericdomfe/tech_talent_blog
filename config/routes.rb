@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :blo_posts
   resources :blo_posts
+  get 'your_posts'=> 'bloposts#your_posts'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

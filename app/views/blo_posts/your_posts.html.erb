@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Your Blog Posts</h1>
+
+<div class="panel panel-default">
+      <% current_user.blo_posts.each do |blo_post| %>
+  <div class="col-md-12">
+    <div class="panel-heading">
+      <%= blo_post.title %>
+    </div>
+    <div class="panel-body">
+     by <%= blo_post.user.username %><br>
+      <%= blo_post.blog_entry %>
+    </div>
+    <div class="panel-footer">
+      
+      <%= link_to 'Edit', edit_blo_post_path(blo_post), class:"btn btn-warning" %>
+      <%= link_to 'Destroy', blo_post, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn  -danger" %>
+    </div>
+  </div>
+      <% end %>
+
+</div>
+ 
+<br>
+
+<%= link_to 'New Blo post', new_blo_post_path %>

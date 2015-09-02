@@ -7,6 +7,8 @@ class BloPostsController < ApplicationController
     @blo_posts = BloPost.all
   end
 
+def your_posts
+end
   # GET /blo_posts/1
   # GET /blo_posts/1.json
   def show
@@ -69,6 +71,6 @@ class BloPostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blo_post_params
-      params.require(:blo_post).permit(:title, :author, :blog_entry)
+      params.require(:blo_post).permit(:title, :author, :blog_entry,:user_id)
     end
 end
